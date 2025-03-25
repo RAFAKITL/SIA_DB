@@ -14,6 +14,20 @@ triggers {
 }
 
 stages {
+
+    stage('Inicializar Repo si es Necesario') {
+        steps {
+        script {
+        if (!fileExists('.git')) {
+        echo "No se encontró directorio .git, iniciando el repositorio..."
+        sh 'git init'
+        sh 'git remote add origin https://github.com/RAFAKITL/SIA_DB.git'
+        sh 'git fetch origin main'
+        sh 'git checkout -b main origin/main'
+                }
+            }
+        }
+    }
     stage('Preparar Workspace') {
         steps {
             deleteDir()
