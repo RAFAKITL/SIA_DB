@@ -1,0 +1,7 @@
+D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_Database\bin\Debug\SIA_Database.dacpac
+D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_Database\bin\Debug\SIA_Database.dll
+D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_Database\bin\Debug\SIA_Database.pdb
+D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_Database\obj\Debug\SIA_Database.sqlproj.AssemblyReference.cache
+D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_Database\obj\Debug\SIA_Database.dll
+D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_Database\obj\Debug\SIA_Database.pdb
+D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_Database\bin\Debug\dbo\Data\A_TablaPrueba.csv

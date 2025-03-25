@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <StartupScript>(En blanco)</StartupScript>
+    <StartAction>StartNone</StartAction>
+    <TargetConnectionString>Data Source=localhost;Initial Catalog=SIA_Pruebas;Persist Security Info=True;User ID=sa;Pooling=False;Multiple Active Result Sets=False;Connect Timeout=60;Encrypt=True;Trust Server Certificate=True;Command Timeout=0</TargetConnectionString>
+    <TargetDatabase>SIA_Pruebas</TargetDatabase>
+    <CreateNewDatabase>False</CreateNewDatabase>
+    <SqlCmdVar__1>D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_Database\dbo</SqlCmdVar__1>
+  </PropertyGroup>
+</Project>

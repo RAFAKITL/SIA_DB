@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "tarea-A_TablaPrueba",
+      "appliesTo": "Data/A_TablaPrueba.csv",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "tarea-Data",
+      "appliesTo": "Data/",
+      "type": "launch"
+    }
+  ]
+}

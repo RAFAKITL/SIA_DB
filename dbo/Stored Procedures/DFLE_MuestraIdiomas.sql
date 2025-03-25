@@ -1,0 +1,7 @@
+﻿CREATE PROCEDURE DFLE_MuestraIdiomas
+AS
+BEGIN
+    SELECT Desc_Idioma FROM DFLE_Idiomas
+    UNION ALL 
+    SELECT 'TOTAL' ;
+END

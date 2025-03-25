@@ -1,0 +1,5 @@
+﻿CREATE PROCEDURE DFLE_MuestraTrimestre
+AS
+BEGIN
+    SELECT * FROM Trimestre;
+END

@@ -1,0 +1,12 @@
+﻿CREATE TABLE [dbo].[Aprovechamiento] (
+    [Desc_Anio_Periodo]     INT           DEFAULT ((0)) NOT NULL,
+    [Desc_Semestre_Periodo] INT           DEFAULT ((0)) NOT NULL,
+    [Desc_Sexo]             VARCHAR (255) DEFAULT (' ') NOT NULL,
+    [Desc_Aprovechamiento]  VARCHAR (255) DEFAULT (' ') NOT NULL,
+    [Desc_Datos]            INT           DEFAULT ((0)) NOT NULL,
+    [id_UnidadAcademica]    INT           NULL,
+    [id_ProgramaAcademico]  INT           NULL,
+    FOREIGN KEY ([id_ProgramaAcademico]) REFERENCES [dbo].[ProgramaAcademico] ([ID_ProgramaAcademico]),
+    FOREIGN KEY ([id_UnidadAcademica]) REFERENCES [dbo].[UnidadesAcademicas] ([ID_UnidadAcademica])
+);
+

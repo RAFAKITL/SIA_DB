@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[SAC_EstadoLCGS] (
+    [ID_EstadoLCGSSAC]   INT           IDENTITY (1, 1) NOT NULL,
+    [Desc_EstadoLCGSSAC] VARCHAR (255) DEFAULT (' ') NOT NULL,
+    PRIMARY KEY CLUSTERED ([ID_EstadoLCGSSAC] ASC)
+);
+
