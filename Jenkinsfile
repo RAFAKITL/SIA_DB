@@ -1,63 +1,60 @@
 pipeline {
-agent any
-environment {
-// Ruta relativa (desde el workspace) donde se encuentra el DACPAC generado previamente
-DACPAC_PATH = 'bin/Debug/SIA_Database.dacpac'
-// Ruta de sqlpackage instalada en el contenedor (según lo definido en el Dockerfile personalizado, en Linux es /opt/sqlpackage/sqlpackage)
-SQLPACKAGE = '/opt/sqlpackage/sqlpackage'
-// Conexión: desde Jenkins (contenedor) el hostname de SQL Server es "db", según lo mapeado en docker-compose.
-CONNECTION_STRING = 'Data Source=db,1433;Initial Catalog=SIA_DB_DOCKER;User ID=sa;Password=!TP@951DII;'
-}
-triggers {
-    // Revisa el repositorio cada 5 minutos
-    pollSCM('H/5 * * * *')
-}
+    agent {
+        docker {
+            // Utiliza la imagen oficial de .NET SDK 7.0, que ya trae el entorno adecuado
+            image 'mcr.microsoft.com/dotnet/sdk:7.0'
+            // Si necesitas montar volúmenes o pasar argumentos adicionales, puedes hacerlo mediante "args"
+            // args '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
+    }
+        
+    environment {
+        // Definir la ruta del DACPAC (usando rutas relativas al workspace)
+        DACPAC_PATH = 'bin/Debug/SIA_Database.dacpac'
+        // Si instalamos sqlpackage como herramienta dotnet, se instalará en el directorio global de dotnet tools
+        // Asegúrate de agregar esa ruta al PATH, normalmente es 
+        HOME/.dotnet/toolsDOTNETTOOLSPATH = "{env.HOME}/.dotnet/tools"
+    }
+    
+    stages {
+        stage('Clonar Repositorio') {
+            steps {
+            // Se clona el repositorio; puedes usar checkout SCM si el Jenkinsfile está en el repositorio
+            checkout scm
+            }
+        }
 
-stages {
-
-    stage('Inicializar Repo si es Necesario') {
-        steps {
-        script {
-        if (!fileExists('.git')) {
-        echo "No se encontró directorio .git, iniciando el repositorio..."
-        sh 'git init'
-        sh 'git remote add origin https://github.com/RAFAKITL/SIA_DB.git'
-        sh 'git fetch origin main'
-        sh 'git checkout -b main origin/main'
+        stage('Instalar SQLPackage como dotnet tool') {
+            steps {
+                // Para instalar sqlpackage como herramienta global, usamos:
+                // Nota: sqlpackage como dotnet tool está disponible como paquete de Microsoft y se puede instalar utilizando "dotnet tool install"
+                sh 'dotnet tool install --global sqlpackage'
+                // Agregamos el directorio de herramientas al PATH para el resto del pipeline
+                script {
+                    env.PATH = "${env.PATH}:${env.HOME}/.dotnet/tools"
                 }
             }
         }
-    }
-    stage('Preparar Workspace') {
-        steps {
-            deleteDir()
-            checkout(scm)
-        }
-    }
-    stage('Obtener Código') {
-        steps {
-            deleteDir()
 
-            checkout([$class: 'GitSCM', branches: [[name: '*/main']],
-            userRemoteConfigs: [[url: 'https://github.com/RAFAKITL/SIA_DB.git']]])
-            // Clona o actualiza la copia local del repositorio con el DACPAC compilado en Visual Studio
-            git branch: 'main', url: 'https://github.com/RAFAKITL/SIA_DB.git'
+        stage('Publicar Base de Datos') {
+            steps {
+                // Verifica que sqlpackage esté instalada; opcionalmente, puedes ejecutar "sqlpackage --version"
+                sh 'sqlpackage --version'
+                // Se ejecuta el comando para publicar el DACPAC en la base de datos
+                // En la cadena de conexión, reemplaza "db" por el host real de tu contenedor SQL Server (o la IP adecuada)
+                sh """
+                sqlpackage /Action:Publish /SourceFile:"${DACPAC_PATH}" /TargetConnectionString:"Data Source=db,1433;Initial Catalog=SIA_DB_DOCKER;User ID=sa;Password=!TP@951DII;"
+                """
+            }
         }
     }
-    stage('Desplegar en la Base de Datos') {
-        steps {
-            // Publica el DACPAC sobre el SQL Server usando sqlpackage
-            // Se invoca el comando desde la ruta definida (y en el contenedor de Jenkins se usará el comando sqlpackage instalado)
-            sh "\"${SQLPACKAGE}\" /Action:Publish /SourceFile:\"${DACPAC_PATH}\" /TargetConnectionString:\"${CONNECTION_STRING}\""
-        }
-    }
-}
 
-post {
-    success {
-        echo 'Despliegue de base de datos exitoso.'
-    }
-    failure {
-        echo 'Error durante el despliegue.'
+    post {
+        success {
+            echo 'Despliegue exitoso.'
+        }
+        failure {
+            echo 'Error durante el despliegue.'
+        }
     }
 }
