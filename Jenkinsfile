@@ -11,9 +11,6 @@ pipeline {
     environment {
         // Definir la ruta del DACPAC (usando rutas relativas al workspace)
         DACPAC_PATH = 'bin/Debug/SIA_Database.dacpac'
-        // Si instalamos sqlpackage como herramienta dotnet, se instalará en el directorio global de dotnet tools
-        // Asegúrate de agregar esa ruta al PATH, normalmente es 
-        HOME/.dotnet/toolsDOTNETTOOLSPATH = "{env.HOME}/.dotnet/tools"
     }
     
     stages {
