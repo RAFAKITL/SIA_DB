@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             // Utiliza la imagen oficial de .NET SDK 7.0, que ya trae el entorno adecuado
-            image 'mcr.microsoft.com/dotnet/sdk:7.0'
+            image 'mcr.microsoft.com/dotnet/sdk:8.0'
             // Si necesitas montar volúmenes o pasar argumentos adicionales, puedes hacerlo mediante "args"
             // args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
