@@ -3,6 +3,7 @@ pipeline {
         docker {
             // Utiliza la imagen oficial de .NET SDK 7.0, que ya trae el entorno adecuado
             image 'dotnet-sdk-docker:latest'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
             // Si necesitas montar volúmenes o pasar argumentos adicionales, puedes hacerlo mediante "args"
             // args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
