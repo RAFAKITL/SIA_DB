@@ -13,12 +13,12 @@ pipeline {
             }
         }
 
-        stage('Copiar Datos al Volumen Compartido') {
-            agent any
-            steps {
-                sh 'docker run --rm -v Catalogos_SIA:/Catalogos_SIA -v ${WORKSPACE}/dbo/Data:/tmp_data busybox sh -c "cp -r /tmp_data/* /Catalogos_SIA/"'
-            }
-        }
+        //stage('Copiar Datos al Volumen Compartido') {
+        //    agent any
+        //    steps {
+        //        sh 'docker run --rm -v Catalogos_SIA:/Catalogos_SIA -v ${WORKSPACE}/dbo/Data:/tmp_data busybox sh -c "cp -r /tmp_data/* /Catalogos_SIA/"'
+        //    }
+        //}
 
         stage('Publicar Base de Datos') {
             agent {
