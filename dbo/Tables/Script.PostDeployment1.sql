@@ -14,14 +14,13 @@ Plantilla de script posterior a la implementación
 IF NOT EXISTS (SELECT 1 FROM [dbo].[A_TablaPrueba])
 BEGIN
     BULK INSERT [dbo].[A_TablaPrueba]
-FROM '$(SqlDataRoot)\Data\A_TablaPrueba.csv'
-WITH 
-(
-    DATAFILETYPE = 'char',           -- Asume que el archivo es de tipo char
-    FIELDTERMINATOR = ',',           -- Delimitador de campos
-    ROWTERMINATOR = '0x0d0a',            -- Delimitador de filas (ajústalo si es necesario)
-    FIRSTROW = 2,                    -- Salta la fila de encabezado
-    CODEPAGE = '65001'               -- Para archivos en UTF-8 sin BOM
-);
+    FROM 'Data/A_TablaPrueba.csv'  -- Ruta con / para Linux
+    WITH 
+    (
+        DATAFILETYPE = 'char',         
+        FIELDTERMINATOR = ',',         
+        ROWTERMINATOR = '0x0a',        -- Cambia el delimitador de filas para Linux
+        FIRSTROW = 2                   
+    );
 END
 

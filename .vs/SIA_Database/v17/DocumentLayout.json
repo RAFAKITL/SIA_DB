@@ -1,12 +1,44 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\choyt\\Documents\\InnovacionTecnologicaPolitecnica\\Registro_Versiones\\SIA\\SIA_Database\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2F96692D-A8DE-467F-B81B-AC4AF1E7634D}|SIA_Database.sqlproj|D:\\choyt\\Documents\\InnovacionTecnologicaPolitecnica\\Registro_Versiones\\SIA\\SIA_Database\\dbo\\Tables\\Script.PostDeployment1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{2F96692D-A8DE-467F-B81B-AC4AF1E7634D}|SIA_Database.sqlproj|solutionrelative:dbo\\Tables\\Script.PostDeployment1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F96692D-A8DE-467F-B81B-AC4AF1E7634D}|SIA_Database.sqlproj|D:\\choyt\\Documents\\InnovacionTecnologicaPolitecnica\\Registro_Versiones\\SIA\\SIA_Database\\dbo\\Tables\\Script.PostDeployment1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{2F96692D-A8DE-467F-B81B-AC4AF1E7634D}|SIA_Database.sqlproj|solutionrelative:dbo\\Tables\\Script.PostDeployment1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    }
+  ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Script.PostDeployment1.sql ",
+              "DocumentMoniker": "D:\\choyt\\Documents\\InnovacionTecnologicaPolitecnica\\Registro_Versiones\\SIA\\SIA_Database\\dbo\\Tables\\Script.PostDeployment1.sql",
+              "RelativeDocumentMoniker": "dbo\\Tables\\Script.PostDeployment1.sql",
+              "ToolTip": "D:\\choyt\\Documents\\InnovacionTecnologicaPolitecnica\\Registro_Versiones\\SIA\\SIA_Database\\dbo\\Tables\\Script.PostDeployment1.sql",
+              "RelativeToolTip": "dbo\\Tables\\Script.PostDeployment1.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-03-26T18:09:09.011Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
