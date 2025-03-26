@@ -26,7 +26,7 @@ pipeline {
                 sh 'echo $PATH'
                 sh 'ls -lah /opt/sqlpackage'
                 sh 'which sqlpackage'
-                sh '/opt/sqlpackage/sqlpackage --version'
+                sh '/opt/sqlpackage/sqlpackage /version'
                 sh """
                 /opt/sqlpackage/sqlpackage /Action:Publish \
                 /SourceFile:"${DACPAC_PATH}" \
