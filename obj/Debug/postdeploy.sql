@@ -14,14 +14,15 @@ Plantilla de script posterior a la implementación
 IF NOT EXISTS (SELECT 1 FROM [dbo].[A_TablaPrueba])
 BEGIN
     BULK INSERT [dbo].[A_TablaPrueba]
-    FROM 'dbo/Data/A_TablaPrueba.csv'  -- Ruta con / para Linux
+    FROM '/Catalogos_SIA/A_TablaPrueba.csv'
     WITH 
     (
-        DATAFILETYPE = 'char',         
-        FIELDTERMINATOR = ',',         
-        ROWTERMINATOR = '0x0a',        -- Cambia el delimitador de filas para Linux
-        FIRSTROW = 2                   
+        DATAFILETYPE = 'char',
+        FIELDTERMINATOR = ',',
+        ROWTERMINATOR = '0x0d0a',
+        FIRSTROW = 2
     );
 END
+
 
 GO
