@@ -23,11 +23,11 @@ pipeline {
             }
             steps {
                 sh 'sqlpackage --version'
-                sh """
-                sqlpackage /Action:Publish \
-                /SourceFile:"${DACPAC_PATH}" \
-                /TargetConnectionString:"Data Source=db,1433;Initial Catalog=SIA_DB_DOCKER;User ID=sa;Password=!TP@951DII;"
-                """
+                sh '''
+                /opt/sqlpackage/sqlpackage /Action:Publish \
+                /SourceFile="${DACPAC_PATH}" \
+                /TargetConnectionString="Data Source=db,1433;Initial Catalog=SIA_DB_DOCKER;User ID=sa;Password=!TP@951DII;"
+                '''
             }
         }
     }
