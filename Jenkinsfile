@@ -21,7 +21,11 @@ pipeline {
                     args '--user root -v /var/run/docker.sock:/var/run/docker.sock --network=host'
                 }
             }
+
             steps {
+                sh 'echo $PATH'
+                sh 'ls -lah /opt/sqlpackage'
+                sh 'which sqlpackage'
                 sh 'sqlpackage --version'
                 sh '''
                 /opt/sqlpackage/sqlpackage /Action:Publish \
