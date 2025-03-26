@@ -13,27 +13,11 @@ pipeline {
             }
         }
 
-        stage('Instalar SQLPackage como dotnet tool') {
-            agent {
-                docker {
-                    image 'dotnet-sdk-docker:latest'
-                    args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
-                }
-            }
-            steps {
-                sh '''
-                    mkdir -p /opt/sqlpackage
-                    dotnet tool install --tool-path /opt/sqlpackage sqlpackage
-                    echo 'export PATH=$PATH:/opt/sqlpackage' >> ~/.bashrc
-                    source ~/.bashrc
-                '''
-            }
-        }
 
         stage('Publicar Base de Datos') {
             agent {
                 docker {
-                    image 'dotnet-sdk-docker:latest'
+                    image 'dotnet-sdk-sqlpackage:latest'
                     args '--user root -v /var/run/docker.sock:/var/run/docker.sock --network=host'
                 }
             }
