@@ -19,6 +19,7 @@ pipeline {
                 docker {
                     image 'dotnet-sdk-sqlpackage:latest'
                     args '--user root -v /var/run/docker.sock:/var/run/docker.sock --network=host'
+                    args '--user root --network=sia_db_docker'
                 }
             }
 
