@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[DFLE_AccionesFormativas] (
     [ID_RegistroFormato12DFLE] INT            IDENTITY (1, 1) NOT NULL,
     [Desc_Tipo_Accion]         NVARCHAR (MAX) DEFAULT (' ') NOT NULL,
-    [Desc_AccionFormativa]     NVARCHAR (MAX) DEFAULT (' ') NOT NULL,
+    [Desc_AccionFormativa]     NVARCHAR (MAX) COLLATE Latin1_General_CI_AI DEFAULT (' ') NOT NULL,
     [Desc_Modalidad]           VARCHAR (5)    NOT NULL,
     [id_Idioma]                INT            NULL,
     [id_UnidadAcademica]       INT            NULL,

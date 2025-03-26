@@ -27882,6 +27882,7 @@ END;]]></Value>
 				</Entry>
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[DFLE_AccionesFormativas].[Desc_AccionFormativa]">
+						<Property Name="Collation" Value="Latin1_General_CI_AI" />
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
