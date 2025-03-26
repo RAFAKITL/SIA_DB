@@ -1,0 +1,57 @@
+{
+  "format": 1,
+  "restore": {
+    "d:\\choyt\\Documents\\InnovacionTecnologicaPolitecnica\\Registro_Versiones\\SIA\\SIA_Database\\SIA_Database.sqlproj": {}
+  },
+  "projects": {
+    "d:\\choyt\\Documents\\InnovacionTecnologicaPolitecnica\\Registro_Versiones\\SIA\\SIA_Database\\SIA_Database.sqlproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\choyt\\Documents\\InnovacionTecnologicaPolitecnica\\Registro_Versiones\\SIA\\SIA_Database\\SIA_Database.sqlproj",
+        "projectName": "SIA_Database",
+        "projectPath": "d:\\choyt\\Documents\\InnovacionTecnologicaPolitecnica\\Registro_Versiones\\SIA\\SIA_Database\\SIA_Database.sqlproj",
+        "packagesPath": "C:\\Users\\choyt\\.nuget\\packages\\",
+        "outputPath": "d:\\choyt\\Documents\\InnovacionTecnologicaPolitecnica\\Registro_Versiones\\SIA\\SIA_Database\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "UsingMicrosoftNETSdk": false,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\choyt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}
