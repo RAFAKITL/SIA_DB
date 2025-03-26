@@ -21,10 +21,12 @@ pipeline {
                 }
             }
             steps {
-                sh 'dotnet tool install --global sqlpackage'
-                script {
-                    env.PATH = "${env.PATH}:${env.HOME}/.dotnet/tools"
-                }
+                sh '''
+                    mkdir -p /opt/sqlpackage
+                    dotnet tool install --tool-path /opt/sqlpackage sqlpackage
+                    echo 'export PATH=$PATH:/opt/sqlpackage' >> ~/.bashrc
+                    source ~/.bashrc
+                '''
             }
         }
 
