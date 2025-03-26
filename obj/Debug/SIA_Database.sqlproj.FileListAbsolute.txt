@@ -5,3 +5,7 @@ D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_D
 D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_Database\obj\Debug\SIA_Database.dll
 D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_Database\obj\Debug\SIA_Database.pdb
 D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_Database\bin\Debug\dbo\Data\A_TablaPrueba.csv
+D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_Database\obj\Debug\Model.xml
+D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_Database\obj\Debug\refactor.xml
+D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_Database\obj\Debug\postdeploy.sql
+D:\choyt\Documents\InnovacionTecnologicaPolitecnica\Registro_Versiones\SIA\SIA_Database\obj\Debug\predeploy.sql
