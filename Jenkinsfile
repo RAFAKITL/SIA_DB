@@ -26,12 +26,12 @@ pipeline {
                 sh 'echo $PATH'
                 sh 'ls -lah /opt/sqlpackage'
                 sh 'which sqlpackage'
-                sh 'sqlpackage --version'
-                sh '''
+                sh '/opt/sqlpackage/sqlpackage --version'
+                sh """
                 /opt/sqlpackage/sqlpackage /Action:Publish \
-                /SourceFile="${DACPAC_PATH}" \
-                /TargetConnectionString="Data Source=db,1433;Initial Catalog=SIA_DB_DOCKER;User ID=sa;Password=!TP@951DII;"
-                '''
+                /SourceFile:"${DACPAC_PATH}" \
+                /TargetConnectionString:"Data Source=db,1433;Initial Catalog=SIA_DB_DOCKER;User ID=sa;Password=!TP@951DII;"
+                """
             }
         }
     }
