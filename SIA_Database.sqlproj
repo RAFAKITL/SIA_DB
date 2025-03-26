@@ -1006,7 +1006,6 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
     <Build Include="Security\Permissions.sql" />
-    <Build Include="dbo\Tables\A_TablaPrueba.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\Data\A_TablaPrueba.csv">
