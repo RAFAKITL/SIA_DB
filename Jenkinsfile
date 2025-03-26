@@ -7,12 +7,7 @@ pipeline {
 
     stages {
         stage('Clonar Repositorio') {
-            agent {
-                docker {
-                    image 'alpine/git' // Usa Alpine para clonar el repositorio
-                    args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
-                }
-            }
+            agent any // Se ejecuta en el nodo de Jenkins (NO en Docker)
             steps {
                 checkout scm
             }
