@@ -1009,9 +1009,6 @@
     <Build Include="dbo\Tables\A_TablaPrueba.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="dbo\Tables\Script.PostDeployment1.sql" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="dbo\Data\A_TablaPrueba.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <QuotedIdentifier>Off</QuotedIdentifier>
