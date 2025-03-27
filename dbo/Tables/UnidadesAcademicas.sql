@@ -4,7 +4,6 @@
     [Siglas]                 VARCHAR (255) DEFAULT (' ') NOT NULL,
     [Clave]                  VARCHAR (255) DEFAULT (' ') NOT NULL,
     [Desc_Fecha_Fundacion]   DATE          DEFAULT ('2008-11-11') NOT NULL,
-    [Desc_Logo]              VARCHAR (255) DEFAULT (' ') NOT NULL,
     [id_Entidad_Federativa]  INT           NULL,
     [id_TipoUnidadAcademica] INT           NULL,
     [id_RamaConocimiento]    INT           NULL,
