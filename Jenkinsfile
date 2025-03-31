@@ -23,7 +23,7 @@ pipeline {
         stage('Publicar Base de Datos') {
             agent {
                 docker {
-                    image 'dotnet-sdk-sqlpackage:latest'
+                    image 'mi-agente:latest'
                     args '--user root --network=sia_db_docker_default -v Catalogos_SIA:/Catalogos_SIA'
                 }
             }
